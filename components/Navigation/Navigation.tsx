@@ -57,11 +57,14 @@ export default function Navigation() {
                 {label}
               </Link>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className={styles.ctaWrapper}>
             <Link href="/kontakt" className={styles.cta}>
               Kontakt
             </Link>
           </div>
-
           {/* Hamburger (Mobile) */}
           <button
             className={`${styles.hamburger} ${
