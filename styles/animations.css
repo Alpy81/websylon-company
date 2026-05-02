@@ -1,0 +1,119 @@
+/* ============================================
+   WEBSYLON – Global Animations & Keyframes
+   ============================================ */
+
+/* --- Fade --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Scale --- */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Glow Pulse --- */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(140, 239, 185, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(140, 239, 185, 0.35);
+  }
+}
+
+/* --- Loading Bar --- */
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+  60% {
+    width: 75%;
+  }
+  90% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* --- Splash Dot Build --- */
+@keyframes dotAppear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Text Reveal --- */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    letter-spacing: 0.3em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+}
+
+/* --- Shimmer --- */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* --- Reduced Motion: alle Animationen deaktivieren --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
