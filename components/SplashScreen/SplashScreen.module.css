@@ -186,6 +186,42 @@
   animation: particleFloat linear infinite;
 }
 
+/* --- Punkteblöcke --- */
+.dotsTopRight,
+.dotsBottomLeft {
+  position: absolute;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 8px rgba(140, 239, 185, 0.6));
+  animation: dotFlicker 2.5s ease-in-out infinite;
+  transform-origin: top center;
+  z-index: 1;
+}
+
+.dotsTopRight {
+  top: 2rem;
+  right: 2rem;
+}
+
+.dotsBottomLeft {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+@keyframes dotFlicker {
+  0% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px rgba(140, 239, 185, 0.9)) translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 4px rgba(140, 239, 185, 0.3));
+  }
+  100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px rgba(140, 239, 185, 0.9));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .textTop .word,
   .textBottom .word,

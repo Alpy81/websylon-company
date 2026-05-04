@@ -50,7 +50,7 @@ export default function SplashScreen() {
         sessionStorage.setItem("splashSeen", "true");
       }
       setState("hiding");
-    }, 7000);
+    }, 7500);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -84,6 +84,24 @@ export default function SplashScreen() {
           }}
         />
       ))}
+
+      {/* Punkteblock rechts oben */}
+      <Image
+        src="/images/symbol-transparent.png"
+        alt=""
+        width={240}
+        height={240}
+        className={styles.dotsTopRight}
+      />
+
+      {/* Punkteblock links unten */}
+      <Image
+        src="/images/symbol-transparent.png"
+        alt=""
+        width={240}
+        height={240}
+        className={styles.dotsBottomLeft}
+      />
 
       {/* Text oben – von rechts */}
       <div className={styles.textTop}>
