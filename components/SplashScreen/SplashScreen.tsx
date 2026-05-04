@@ -18,7 +18,20 @@ function getInitialState(): SplashState {
 }
 
 const topWords = ["Professionell", "auftreten", "mit", ".."];
-const bottomWords = ["Webseiten,", "die", "beeindrucken", ".."];
+const bottomWords = ["Webseiten,", "die", "beindrucken", ".."];
+
+const particles = [
+  { size: 6, top: "15%", left: "10%", duration: 8, delay: 0.5 },
+  { size: 4, top: "25%", left: "80%", duration: 10, delay: 1.2 },
+  { size: 8, top: "60%", left: "15%", duration: 9, delay: 0.8 },
+  { size: 5, top: "70%", left: "75%", duration: 7, delay: 1.5 },
+  { size: 4, top: "40%", left: "90%", duration: 11, delay: 0.3 },
+  { size: 6, top: "80%", left: "50%", duration: 8, delay: 2.0 },
+  { size: 3, top: "20%", left: "45%", duration: 12, delay: 1.0 },
+  { size: 7, top: "50%", left: "30%", duration: 9, delay: 0.6 },
+  { size: 4, top: "85%", left: "85%", duration: 10, delay: 1.8 },
+  { size: 5, top: "35%", left: "60%", duration: 8, delay: 2.5 },
+];
 
 export default function SplashScreen() {
   const [state, setState] = useState<SplashState>(getInitialState);
@@ -32,13 +45,12 @@ export default function SplashScreen() {
   };
 
   useEffect(() => {
-    // Gesamtdauer: letztes Wort unten erscheint bei 4.05s + 0.7s Animation = ~4.8s
     timerRef.current = setTimeout(() => {
       if (process.env.NODE_ENV !== "development") {
         sessionStorage.setItem("splashSeen", "true");
       }
       setState("hiding");
-    }, 5200);
+    }, 7000);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -57,7 +69,23 @@ export default function SplashScreen() {
         state === "hiding" ? styles["splash--hidden"] : ""
       }`}
       onTransitionEnd={handleTransitionEnd}>
-      {/* Text oben – von links */}
+      {/* Schwebende Partikel */}
+      {particles.map((p, i) => (
+        <span
+          key={i}
+          className={styles.particle}
+          style={{
+            width: p.size,
+            height: p.size,
+            top: p.top,
+            left: p.left,
+            animationDuration: `${p.duration}s`,
+            animationDelay: `${p.delay}s`,
+          }}
+        />
+      ))}
+
+      {/* Text oben – von rechts */}
       <div className={styles.textTop}>
         {topWords.map((word, i) => (
           <span key={i} className={styles.word}>
@@ -71,14 +99,14 @@ export default function SplashScreen() {
         <Image
           src="/logos/home-logo.png"
           alt="Websylon"
-          width={220}
-          height={220}
+          width={300}
+          height={300}
           className={styles.logo}
           priority
         />
       </div>
 
-      {/* Text unten – von rechts */}
+      {/* Text unten – von links */}
       <div className={styles.textBottom}>
         {bottomWords.map((word, i) => (
           <span key={i} className={styles.word}>
