@@ -30,8 +30,8 @@
 }
 
 .logo {
-  height: 32px !important;
-  width: auto !important;
+  width: 200px;
+  height: auto;
   justify-self: start;
 }
 

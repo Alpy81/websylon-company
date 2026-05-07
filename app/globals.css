@@ -52,3 +52,14 @@ body {
 .container--narrow {
   max-width: var(--container-narrow);
 }
+
+/* --- Globaler Seiten-Hintergrund --- */
+main {
+  background-color: var(--color-bg-base);
+  min-height: 100vh;
+}
+
+/* --- Keine Trennlinien zwischen Sections --- */
+section {
+  border: none !important;
+}

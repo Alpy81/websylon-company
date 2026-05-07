@@ -53,96 +53,115 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.grid}>
-        <div className={styles.brand}>
-          <Link href="/" aria-label="Websylon – Zur Startseite">
-            <Image
-              src="/logos/websylon-navbar.png"
-              alt="Websylon Logo"
-              width={140}
-              height={28}
-              className={styles.logo}
-            />
-          </Link>
+    <div className={styles.footerWrapper}>
+      <div className={styles.footerGlow} />
 
-          <div className={styles.contact}>
-            <a href="mailto:info@web-sylon.de" className={styles.contactLink}>
-              info@web-sylon.de
-            </a>
-            <a href="tel:+491718317348" className={styles.contactLink}>
-              0171 – 831 73 48
-            </a>
+      <footer className={styles.footer}>
+        <div className={styles.top}>
+          {/* Brand Spalte */}
+          <div className={styles.brand}>
+            <Link href="/" aria-label="Websylon – Zur Startseite">
+              <Image
+                src="/logos/websylon-navbar.png"
+                alt="Websylon Logo"
+                width={140}
+                height={28}
+                className={styles.logo}
+              />
+            </Link>
+
+            <p className={styles.brandText}>
+              Professionelle Webentwicklung für Unternehmen, die mehr wollen als
+              nur online präsent zu sein. Modern, schnell, individuell.
+            </p>
+
+            <div className={styles.contact}>
+              <a href="mailto:info@web-sylon.de" className={styles.contactLink}>
+                <span className={styles.contactIcon}>✉</span>
+                info@web-sylon.de
+              </a>
+              <a href="tel:+491718317348" className={styles.contactLink}>
+                <span className={styles.contactIcon}>📞</span>
+                0171 – 831 73 48
+              </a>
+            </div>
+
+            <div className={styles.social}>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="Instagram">
+                <InstagramIcon />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="GitHub">
+                <GithubIcon />
+              </a>
+              <a
+                href="https://wa.me/491718317348"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="WhatsApp">
+                <WhatsAppIcon />
+              </a>
+            </div>
           </div>
 
-          <div className={styles.social}>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-              aria-label="Instagram">
-              <InstagramIcon />
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-              aria-label="GitHub">
-              <GithubIcon />
-            </a>
-            <a
-              href="https://wa.me/491718317348"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-              aria-label="WhatsApp">
-              <WhatsAppIcon />
-            </a>
+          {/* Navigation */}
+          <div className={styles.col}>
+            <span className={styles.colTitle}>Navigation</span>
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={styles.colLink}>
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mehr */}
+          <div className={styles.col}>
+            <span className={styles.colTitle}>Mehr</span>
+            {moreLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={styles.colLink}>
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Rechtliches */}
+          <div className={styles.col}>
+            <span className={styles.colTitle}>Rechtliches</span>
+            {legalLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={styles.colLink}>
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
 
-        <div className={styles.col}>
-          <span className={styles.colTitle}>Navigation</span>
-          {navLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className={styles.colLink}>
-              {label}
-            </Link>
-          ))}
-        </div>
+        <div className={styles.divider} />
 
-        <div className={styles.col}>
-          <span className={styles.colTitle}>Mehr</span>
-          {moreLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className={styles.colLink}>
-              {label}
-            </Link>
-          ))}
+        <div className={styles.bottom}>
+          <div className={styles.bottomLeft}>
+            <p className={styles.copyright}>
+              © {year} Websylon. Alle Rechte vorbehalten.
+            </p>
+          </div>
+          <div className={styles.legal}>
+            {legalLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={styles.legalLink}>
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <div className={styles.col}>
-          <span className={styles.colTitle}>Rechtliches</span>
-          {legalLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className={styles.colLink}>
-              {label}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.bottom}>
-        <p className={styles.copyright}>
-          © {year} Websylon. Alle Rechte vorbehalten.
-        </p>
-        <div className={styles.legal}>
-          {legalLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className={styles.legalLink}>
-              {label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }

@@ -92,6 +92,7 @@ export default function SplashScreen() {
         width={240}
         height={240}
         className={styles.dotsTopRight}
+        loading="eager"
       />
 
       {/* Punkteblock links unten */}
@@ -101,6 +102,7 @@ export default function SplashScreen() {
         width={240}
         height={240}
         className={styles.dotsBottomLeft}
+        loading="eager"
       />
 
       {/* Text oben – von rechts */}
