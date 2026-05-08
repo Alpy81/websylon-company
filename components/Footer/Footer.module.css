@@ -4,7 +4,7 @@
 
 .footerWrapper {
   position: relative;
-  margin-top: var(--space-32);
+  margin-top: 0;
 }
 
 .footerGlow {
@@ -12,8 +12,9 @@
 }
 
 .footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-surface);
   padding-top: var(--space-16);
+  border-top: 1px solid var(--color-border);
 }
 
 /* --- Top Section --- */

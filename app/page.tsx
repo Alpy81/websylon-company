@@ -41,32 +41,51 @@ const leistungenPreview = [
   },
 ];
 
+const portfolioPreview = [
+  {
+    image: "/images/demo-fitness.png",
+    tag: "Fitness & Sport",
+    title: "Fitness Studio Website",
+    text: "Moderne Website für ein Fitnessstudio mit Kursplan, Online-Anmeldung und Shop.",
+    href: "https://fitness-club-demo.vercel.app",
+  },
+  {
+    image: "/images/demo-sperrzone24.png",
+    tag: "Dienstleistungen",
+    title: "Sperrzone24",
+    text: "Professioneller Web-Auftritt für einen Sicherheitsdienstleister mit Kontaktformular.",
+    href: "https://sperrzone24.de",
+  },
+  {
+    image: "/images/demo-steuerkanzlei.jpg",
+    tag: "Recht & Finanzen",
+    title: "Steuerkanzlei Website",
+    text: "Seriöser und vertrauenswürdiger Auftritt für eine moderne Steuerkanzlei.",
+    href: "https://tax-office-demo.vercel.app",
+  },
+];
+
 export default function Home() {
   return (
     <main>
-      {/* ── Hero ── */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
         <div className={styles.heroGrid} />
-
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
               <span className={styles.heroBadgeDot} />
               Professionelle Webentwicklung
             </div>
-
             <h1 className={styles.heroTitle}>
               Webseiten, die{" "}
               <span className={styles.heroTitleAccent}>Eindruck</span>{" "}
               hinterlassen.
             </h1>
-
             <p className={styles.heroSubtext}>
               Wir entwickeln digitale Auftritte für Unternehmen, die mehr wollen
               als nur online präsent zu sein.
             </p>
-
             <div className={styles.heroActions}>
               <Link href="/kontakt" className={styles.btnPrimary}>
                 Projekt starten
@@ -76,12 +95,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
           <div className={styles.heroVisual}>
             <div className={styles.heroGlobe}>
               <div className={styles.heroGlobeInner}>
                 <Image
-                  src="/images/symbol-transparent.png"
+                  src="/images/symbol.png"
                   alt="Websylon Symbol"
                   width={100}
                   height={100}
@@ -94,7 +112,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Leistungen Preview ── */}
       <section className={styles.leistungen}>
         <div className={styles.leistungenInner}>
           <div className={styles.leistungenHeader}>
@@ -110,7 +127,6 @@ export default function Home() {
               durch den gesamten digitalen Entwicklungsprozess.
             </p>
           </div>
-
           <div className={styles.leistungenGrid}>
             {leistungenPreview.map(({ icon, title, desc, features, href }) => (
               <Link key={title} href={href} className={styles.leistungCard}>
@@ -130,7 +146,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-
           <div className={styles.leistungenCta}>
             <Link href="/leistungen" className={styles.leistungenCtaBtn}>
               Alle Leistungen entdecken →
@@ -138,10 +153,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── Warum Websylon ── */}
+
       <section className={styles.warum}>
         <div className={styles.warumInner}>
-          {/* Linke Seite – Content */}
           <div className={styles.warumContent}>
             <span className={styles.warumBadge}>Warum Websylon</span>
             <h2 className={styles.warumTitle}>
@@ -153,7 +167,6 @@ export default function Home() {
               entwickelt – mit Leidenschaft, technischer Exzellenz und einem
               klaren Fokus auf Ihre Ziele.
             </p>
-
             <div className={styles.warumStats}>
               <div className={styles.warumStat}>
                 <span className={styles.warumStatNumber}>25+</span>
@@ -168,15 +181,12 @@ export default function Home() {
                 <span className={styles.warumStatLabel}>Support</span>
               </div>
             </div>
-
             <div className={styles.warumCta}>
               <Link href="/ueber-uns" className={styles.warumCtaBtn}>
                 Mehr über uns →
               </Link>
             </div>
           </div>
-
-          {/* Rechte Seite – Liste */}
           <div className={styles.warumList}>
             {[
               {
@@ -208,6 +218,192 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.branchen}>
+        <div className={styles.branchenInner}>
+          <div className={styles.branchenHeader}>
+            <span className={styles.branchenBadge}>Unsere Expertise</span>
+            <h2 className={styles.branchenTitle}>
+              Ihre Branche,{" "}
+              <span className={styles.branchenTitleAccent}>unsere Stärke</span>
+            </h2>
+            <p className={styles.branchenSubtext}>
+              Maßgeschneiderte Weblösungen für verschiedene Branchen – wir
+              kennen die Anforderungen Ihres Marktes.
+            </p>
+          </div>
+          <div className={styles.branchenGrid}>
+            {[
+              {
+                icon: "🚀",
+                title: "Start-ups",
+                text: "Von der Idee zur digitalen Realität. Schnell, modern und skalierbar.",
+              },
+              {
+                icon: "🛍️",
+                title: "E-Commerce",
+                text: "Online-Handel, Einzelhandel, Kaufhäuser & Lebensmittelmärkte.",
+              },
+              {
+                icon: "🍽️",
+                title: "Gastronomie",
+                text: "Restaurants, Cafés, Fast-Food Ketten & Imbissstände.",
+              },
+              {
+                icon: "🏢",
+                title: "Immobilien",
+                text: "Professionelle Präsentation für Makler mit Objekt-Showcases.",
+              },
+              {
+                icon: "⚖️",
+                title: "Recht & Finanzen",
+                text: "Anwaltskanzleien, Steuerbüros & Finanzdienstleister.",
+              },
+              {
+                icon: "⚕️",
+                title: "Gesundheitswesen",
+                text: "Arztpraxen, Apotheken, Pflegedienste & Krankenhäuser.",
+              },
+            ].map(({ icon, title, text }) => (
+              <div key={title} className={styles.brancheCard}>
+                <span className={styles.brancheIcon}>{icon}</span>
+                <h3 className={styles.brancheTitle}>{title}</h3>
+                <p className={styles.brancheText}>{text}</p>
+              </div>
+            ))}
+          </div>
+          <div className={styles.branchenCta}>
+            <Link href="/branchen" className={styles.branchenCtaBtn}>
+              Alle Branchen entdecken →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.portfolio}>
+        <div className={styles.portfolioInner}>
+          <div className={styles.portfolioHeader}>
+            <span className={styles.portfolioBadge}>Unsere Arbeiten</span>
+            <h2 className={styles.portfolioTitle}>
+              Projekte, die{" "}
+              <span className={styles.portfolioTitleAccent}>überzeugen</span>
+            </h2>
+            <p className={styles.portfolioSubtext}>
+              Ein Auszug aus unseren realisierten Projekten – modern, performant
+              und individuell auf die jeweilige Branche zugeschnitten.
+            </p>
+          </div>
+          <div className={styles.portfolioGrid}>
+            {portfolioPreview.map(({ image, tag, title, text, href }) => (
+              <a
+                key={title}
+                href={href}
+                className={styles.portfolioCard}
+                target="_blank"
+                rel="noopener noreferrer">
+                <div className={styles.portfolioImageWrapper}>
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className={styles.portfolioImage}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className={styles.portfolioOverlay} />
+                </div>
+                <div className={styles.portfolioContent}>
+                  <span className={styles.portfolioTag}>{tag}</span>
+                  <h3 className={styles.portfolioCardTitle}>{title}</h3>
+                  <p className={styles.portfolioCardText}>{text}</p>
+                  <span className={styles.portfolioBtn}>Demo ansehen →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className={styles.portfolioCta}>
+            <Link href="/portfolio" className={styles.portfolioCtaBtn}>
+              Alle Projekte ansehen →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.testimonials}>
+        <div className={styles.testimonialsInner}>
+          <div className={styles.testimonialsHeader}>
+            <span className={styles.testimonialsBadge}>Kundenstimmen</span>
+            <h2 className={styles.testimonialsTitle}>
+              Was unsere{" "}
+              <span className={styles.testimonialsTitleAccent}>
+                Kunden sagen
+              </span>
+            </h2>
+          </div>
+          <div className={styles.testimonialsGrid}>
+            {[
+              {
+                quote:
+                  "Websylon hat unsere Vorstellungen perfekt umgesetzt. Die neue Website ist nicht nur optisch beeindruckend, sondern hat unsere Anfragen deutlich gesteigert.",
+                name: "Thomas Müller",
+                role: "Inhaber, Müller Steuerkanzlei",
+                initials: "TM",
+              },
+              {
+                quote:
+                  "Professionelle Abwicklung von Anfang bis Ende. Unser Online-Shop läuft seit dem Launch reibungslos und die Conversion-Rate hat sich verdoppelt.",
+                name: "Sarah Hoffmann",
+                role: "Geschäftsführerin, FitLife Studios",
+                initials: "SH",
+              },
+              {
+                quote:
+                  "Endlich eine Website die wirklich zu uns passt. Schnelle Umsetzung, faire Preise und ein Team das wirklich zuhört. Absolute Empfehlung!",
+                name: "Michael Becker",
+                role: "Gründer, Sperrzone24",
+                initials: "MB",
+              },
+            ].map(({ quote, name, role, initials }) => (
+              <div key={name} className={styles.testimonialCard}>
+                <div>
+                  <span className={styles.testimonialQuoteMark}>&ldquo;</span>
+                  <p className={styles.testimonialQuote}>{quote}</p>
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <div className={styles.testimonialAvatar}>{initials}</div>
+                  <div>
+                    <p className={styles.testimonialName}>{name}</p>
+                    <p className={styles.testimonialRole}>{role}</p>
+                  </div>
+                  <div className={styles.testimonialStars}>★★★★★</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA Banner ── */}
+      <section className={styles.ctaBanner}>
+        <div className={styles.ctaBannerInner}>
+          <span className={styles.ctaBannerLabel}>Jetzt starten</span>
+          <h2 className={styles.ctaBannerTitle}>
+            Ihr Projekt verdient den{" "}
+            <span className={styles.ctaBannerTitleAccent}>besten Auftritt</span>
+          </h2>
+          <p className={styles.ctaBannerText}>
+            Lassen Sie uns gemeinsam eine Website entwickeln, die Ihre Kunden
+            begeistert und Ihr Geschäft voranbringt.
+          </p>
+          <div className={styles.ctaBannerActions}>
+            <Link href="/kontakt" className={styles.ctaBannerBtnPrimary}>
+              Kostenloses Erstgespräch →
+            </Link>
+            <Link href="/leistungen" className={styles.ctaBannerBtnSecondary}>
+              Leistungen ansehen
+            </Link>
           </div>
         </div>
       </section>

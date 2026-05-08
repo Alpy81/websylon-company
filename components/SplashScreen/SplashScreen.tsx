@@ -6,17 +6,6 @@ import styles from "./SplashScreen.module.css";
 
 type SplashState = "visible" | "hiding" | "hidden";
 
-function getInitialState(): SplashState {
-  if (typeof window === "undefined") return "visible";
-  if (
-    process.env.NODE_ENV !== "development" &&
-    sessionStorage.getItem("splashSeen")
-  ) {
-    return "hidden";
-  }
-  return "visible";
-}
-
 const topWords = ["Professionell", "auftreten", "mit", ".."];
 const bottomWords = ["Webseiten,", "die", "beindrucken", ".."];
 
@@ -34,32 +23,25 @@ const particles = [
 ];
 
 export default function SplashScreen() {
-  const [state, setState] = useState<SplashState>(getInitialState);
+  const [state, setState] = useState<SplashState>(() => {
+    if (typeof window === "undefined") return "hidden";
+    return sessionStorage.getItem("splashSeen") ? "hidden" : "visible";
+  });
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const dismiss = () => {
-    if (process.env.NODE_ENV !== "development") {
-      sessionStorage.setItem("splashSeen", "true");
-    }
+    sessionStorage.setItem("splashSeen", "true");
     setState("hiding");
+    setTimeout(() => setState("hidden"), 700);
   };
 
   useEffect(() => {
-    timerRef.current = setTimeout(() => {
-      if (process.env.NODE_ENV !== "development") {
-        sessionStorage.setItem("splashSeen", "true");
-      }
-      setState("hiding");
-    }, 7500);
-
+    if (state !== "visible") return;
+    timerRef.current = setTimeout(dismiss, 7500);
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, []);
-
-  const handleTransitionEnd = () => {
-    if (state === "hiding") setState("hidden");
-  };
+  }, [state]);
 
   if (state === "hidden") return null;
 
@@ -67,9 +49,7 @@ export default function SplashScreen() {
     <div
       className={`${styles.splash} ${
         state === "hiding" ? styles["splash--hidden"] : ""
-      }`}
-      onTransitionEnd={handleTransitionEnd}>
-      {/* Schwebende Partikel */}
+      }`}>
       {particles.map((p, i) => (
         <span
           key={i}
@@ -85,27 +65,24 @@ export default function SplashScreen() {
         />
       ))}
 
-      {/* Punkteblock rechts oben */}
       <Image
-        src="/images/symbol-transparent.png"
+        src="/images/symbol.png"
         alt=""
-        width={240}
-        height={240}
+        width={120}
+        height={120}
         className={styles.dotsTopRight}
         loading="eager"
       />
 
-      {/* Punkteblock links unten */}
       <Image
-        src="/images/symbol-transparent.png"
+        src="/images/symbol.png"
         alt=""
-        width={240}
-        height={240}
+        width={120}
+        height={120}
         className={styles.dotsBottomLeft}
         loading="eager"
       />
 
-      {/* Text oben – von rechts */}
       <div className={styles.textTop}>
         {topWords.map((word, i) => (
           <span key={i} className={styles.word}>
@@ -114,7 +91,6 @@ export default function SplashScreen() {
         ))}
       </div>
 
-      {/* Logo mit 360° Animation */}
       <div className={styles.logoWrapper}>
         <Image
           src="/logos/home-logo.png"
@@ -126,7 +102,6 @@ export default function SplashScreen() {
         />
       </div>
 
-      {/* Text unten – von links */}
       <div className={styles.textBottom}>
         {bottomWords.map((word, i) => (
           <span key={i} className={styles.word}>

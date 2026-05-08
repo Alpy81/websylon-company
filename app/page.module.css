@@ -623,3 +623,607 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* --- Branchen Preview --- */
+.branchen {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-surface);
+}
+
+.branchenInner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.branchenHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.branchenBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  background: rgba(140, 239, 185, 0.04);
+}
+
+.branchenTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.branchenTitleAccent {
+  color: var(--color-primary);
+}
+
+.branchenSubtext {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.branchenGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.brancheCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-elevated);
+  text-align: center;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base), transform var(--transition-base);
+  cursor: default;
+}
+
+.brancheCard:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.brancheIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.brancheTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.brancheText {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.branchenCta {
+  display: flex;
+  justify-content: center;
+}
+
+.branchenCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.branchenCtaBtn:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .branchenGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .branchenGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Portfolio Preview --- */
+.portfolio {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-base);
+}
+
+.portfolioInner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.portfolioHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.portfolioBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  background: rgba(140, 239, 185, 0.04);
+}
+
+.portfolioTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.portfolioTitleAccent {
+  color: var(--color-primary);
+}
+
+.portfolioSubtext {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.portfolioCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base), transform var(--transition-base);
+  text-decoration: none;
+}
+
+.portfolioCard:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.portfolioImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.portfolioImage {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.portfolioCard:hover .portfolioImage {
+  transform: scale(1.05);
+}
+
+.portfolioOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(16, 29, 37, 0.8) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.portfolioCard:hover .portfolioOverlay {
+  opacity: 1;
+}
+
+.portfolioContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.portfolioTag {
+  display: inline-flex;
+  width: fit-content;
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: rgba(140, 239, 185, 0.08);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.portfolioCardTitle {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.portfolioCardText {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.portfolioCta {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolioCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.portfolioCtaBtn:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.portfolioBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-bg-base);
+  background: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-2);
+  width: fit-content;
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.portfolioBtn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Testimonials --- */
+.testimonials {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-surface);
+}
+
+.testimonialsInner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.testimonialsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.testimonialsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  background: rgba(140, 239, 185, 0.04);
+}
+
+.testimonialsTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.testimonialsTitleAccent {
+  color: var(--color-primary);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-elevated),
+    var(--color-bg-base)
+  );
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+}
+
+.testimonialCard:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.testimonialQuote {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonialQuoteMark {
+  font-size: 3rem;
+  color: var(--color-primary);
+  opacity: 0.3;
+  line-height: 0.5;
+  font-family: Georgia, serif;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonialAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-bg-base);
+  flex-shrink: 0;
+}
+
+.testimonialName {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.testimonialRole {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.testimonialStars {
+  display: flex;
+  gap: 2px;
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 1024px) {
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- CTA Banner --- */
+.ctaBanner {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-surface);
+}
+
+.ctaBanner::before {
+  content: none;
+}
+
+.ctaBannerInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+.ctaBannerLabel {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ctaBannerTitle {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.ctaBannerTitleAccent {
+  color: var(--color-primary);
+}
+
+.ctaBannerText {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.ctaBannerActions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.ctaBannerBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-bg-base);
+  background: var(--color-primary);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  transition: background-color var(--transition-fast),
+    box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.ctaBannerBtnPrimary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.ctaBannerBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-hover);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.ctaBannerBtnSecondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .ctaBannerActions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
