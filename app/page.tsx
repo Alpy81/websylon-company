@@ -99,7 +99,7 @@ export default function Home() {
             <div className={styles.heroGlobe}>
               <div className={styles.heroGlobeInner}>
                 <Image
-                  src="/images/symbol.png"
+                  src="/images/symbol-transparent.png"
                   alt="Websylon Symbol"
                   width={100}
                   height={100}
@@ -347,23 +347,23 @@ export default function Home() {
               {
                 quote:
                   "Websylon hat unsere Vorstellungen perfekt umgesetzt. Die neue Website ist nicht nur optisch beeindruckend, sondern hat unsere Anfragen deutlich gesteigert.",
-                name: "Thomas Müller",
-                role: "Inhaber, Müller Steuerkanzlei",
-                initials: "TM",
+                name: "Dr. Michael Weber",
+                role: "Inhaber, Weber&Partner Steuerkanzlei",
+                initials: "MW",
               },
               {
                 quote:
-                  "Professionelle Abwicklung von Anfang bis Ende. Unser Online-Shop läuft seit dem Launch reibungslos und die Conversion-Rate hat sich verdoppelt.",
-                name: "Sarah Hoffmann",
-                role: "Geschäftsführerin, FitLife Studios",
-                initials: "SH",
+                  "Professionelle Abwicklung von Anfang bis Ende. Unser Online-Präsens läuft seit dem Launch reibungslos und die Conversion-Rate hat sich verdoppelt. Wir sind begeistert",
+                name: "Jerome Mayer",
+                role: "Geschäftsführer, Fit-Training Studios",
+                initials: "JM",
               },
               {
                 quote:
-                  "Endlich eine Website die wirklich zu uns passt. Schnelle Umsetzung, faire Preise und ein Team das wirklich zuhört. Absolute Empfehlung!",
-                name: "Michael Becker",
-                role: "Gründer, Sperrzone24",
-                initials: "MB",
+                  "Eine Website die wirklich zu uns und unserer Branche passt. Schnelle Umsetzung, faire Preise und ein Team das wirklich zuhört. Absolute Empfehlung!",
+                name: "Yunus Kurt",
+                role: "Gründer, Sperrzone24, Verkehrssicherheit",
+                initials: "YK",
               },
             ].map(({ quote, name, role, initials }) => (
               <div key={name} className={styles.testimonialCard}>

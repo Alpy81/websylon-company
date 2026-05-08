@@ -1,0 +1,385 @@
+/* ============================================
+   WEBSYLON – Leistungen
+   ============================================ */
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  padding-block: var(--space-32);
+  padding-inline: var(--container-pad);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 80% 50%,
+      rgba(140, 239, 185, 0.06) 0%,
+      transparent 60%
+    ),
+    var(--color-bg-base);
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  background: rgba(140, 239, 185, 0.04);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.heroTitle {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.heroTitleAccent {
+  color: var(--color-primary);
+}
+
+.heroSubtext {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* --- Leistungen Grid --- */
+.grid {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-surface);
+}
+
+.gridInner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-elevated);
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardHeader {
+  padding: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardTitle {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.cardFeatures {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--space-8);
+  gap: var(--space-3);
+}
+
+.cardFeature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.cardFeatureCheck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(140, 239, 185, 0.1);
+  border: 1px solid rgba(140, 239, 185, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* --- Prozess Section --- */
+.prozess {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-base);
+}
+
+.prozessInner {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.prozessHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.sectionLabel {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sectionTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.sectionTitleAccent {
+  color: var(--color-primary);
+}
+
+.prozessGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  position: relative;
+}
+
+.prozessGrid::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: var(--gradient-brand);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.prozessStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.prozessNumber {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--color-bg-base);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.prozessTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.prozessText {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* --- CTA --- */
+.cta {
+  padding-block: var(--space-24);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.ctaInner {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.ctaText {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.ctaActions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctaBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-bg-base);
+  background: var(--color-primary);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast),
+    box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.ctaBtnPrimary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.ctaBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.ctaBtnSecondary:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .gridInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prozessGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prozessGrid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridInner {
+    grid-template-columns: 1fr;
+  }
+
+  .prozessGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+}
