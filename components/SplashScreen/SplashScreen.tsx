@@ -23,10 +23,7 @@ const particles = [
 ];
 
 export default function SplashScreen() {
-  const [state, setState] = useState<SplashState>(() => {
-    if (typeof window === "undefined") return "hidden";
-    return sessionStorage.getItem("splashSeen") ? "hidden" : "visible";
-  });
+  const [state, setState] = useState<SplashState>("hidden");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const dismiss = () => {
@@ -36,12 +33,20 @@ export default function SplashScreen() {
   };
 
   useEffect(() => {
-    if (state !== "visible") return;
+    const seen = sessionStorage.getItem("splashSeen");
+    if (seen) return;
+
+    const raf = requestAnimationFrame(() => {
+      setState("visible");
+    });
+
     timerRef.current = setTimeout(dismiss, 7500);
+
     return () => {
+      cancelAnimationFrame(raf);
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [state]);
+  }, []);
 
   if (state === "hidden") return null;
 
