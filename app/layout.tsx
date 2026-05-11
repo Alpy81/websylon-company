@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import SplashScreen from "@/components/SplashScreen/SplashScreen";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <script dangerouslySetInnerHTML={{ __html: splashScript }} />
+        <CookieBanner />
         <SplashScreen />
         <Navigation />
         <main style={{ minHeight: "100vh" }}>{children}</main>

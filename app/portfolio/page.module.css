@@ -171,6 +171,7 @@
   background: rgba(140, 239, 185, 0.08);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
+  margin-left: calc(-1 * var(--space-3));
 }
 
 .cardTitle {
