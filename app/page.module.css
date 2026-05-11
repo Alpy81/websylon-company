@@ -838,6 +838,24 @@
   text-decoration: none;
 }
 
+.portfolioCardTablet {
+  display: none;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base), transform var(--transition-base);
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .portfolioCardTablet {
+    display: flex;
+  }
+}
+
 .portfolioCard:hover {
   border-color: var(--color-border-hover);
   box-shadow: var(--shadow-lg);

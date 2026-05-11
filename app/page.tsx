@@ -63,6 +63,13 @@ const portfolioPreview = [
     text: "Seriöser und vertrauenswürdiger Auftritt für eine moderne Steuerkanzlei.",
     href: "https://tax-office-demo.vercel.app",
   },
+  {
+    image: "/images/demo-personalvermittler.png",
+    tag: "Start-up",
+    title: "Personalvermittler",
+    text: "Zeitgemäße Website mit Bewerbungsformular und Terminbuchungs-Funktion.",
+    href: "https://hr-recruiting-demo.vercel.app",
+  },
 ];
 
 export default function Home() {

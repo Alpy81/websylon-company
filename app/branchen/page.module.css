@@ -5,7 +5,8 @@
 /* --- Hero --- */
 .hero {
   position: relative;
-  padding-block: var(--space-32);
+  padding-top: calc(80px + var(--space-16) + var(--space-16));
+  padding-bottom: var(--space-16);
   padding-inline: var(--container-pad);
   overflow: hidden;
 }
@@ -76,7 +77,7 @@
 
 /* --- Grid --- */
 .grid {
-  padding-block: var(--space-24);
+  padding-block: var(--space-16);
   padding-inline: var(--container-pad);
 }
 

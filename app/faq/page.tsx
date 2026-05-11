@@ -14,12 +14,12 @@ const faqs = [
   {
     question: "Wie lange dauert die Entwicklung einer Website?",
     answer:
-      "Ein Standard-Projekt dauert in der Regel 4–8 Wochen von Konzept bis Launch. Kleinere Websites können in 2–3 Wochen fertig sein, während komplexe E-Commerce-Plattformen oder individuelle Web-Apps 3–6 Monate benötigen können. Nach dem Erstgespräch geben wir Ihnen eine genaue Zeitplanung.",
+      "Standard-Projekte dauern in der Regel 2-3 Wochen von Konzept bis Launch. Kleinere Websites können in 1-2 Wochen fertig sein, während komplexe E-Commerce-Plattformen oder individuelle Web-Apps 1-3 Monate benötigen können. Nach dem Erstgespräch geben wir Ihnen eine genaue Zeitplanung.",
   },
   {
     question: "Bieten Sie auch Wartung und Support an?",
     answer:
-      "Ja! Wir bieten flexible Wartungspakete ab 50 €/Monat an. Diese beinhalten regelmäßige Updates, Backups, Sicherheitsüberwachung, technischen Support und kleinere Anpassungen. Für größere Updates erstellen wir individuelle Angebote.",
+      "Ja! Wir bieten flexible Wartungspakete mit indivudueller Absprache gemäß Projektgröße an. Diese beinhalten regelmäßige Updates, Backups, Sicherheitsüberwachung, technischen Support und kleinere Anpassungen. Für größere Updates erstellen wir individuelle Angebote.",
   },
   {
     question: "Kann ich meine Website später selbst bearbeiten?",

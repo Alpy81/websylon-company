@@ -26,7 +26,12 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // gelöscht – wird über onClick gelöst
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <header>
@@ -34,15 +39,21 @@ export default function Navigation() {
         className={`${styles.nav} ${scrolled ? styles["nav--scrolled"] : ""}`}>
         <div className={styles.inner}>
           {/* Logo */}
-          <Image
-            src="/logos/websylon-navbar.png"
-            alt="Websylon Logo"
-            width={140}
-            height={40}
-            style={{ width: "200px", height: "auto" }}
-            className={styles.logo}
-            priority
-          />
+          <Link
+            href="/"
+            aria-label="Websylon – Zur Startseite"
+            className={menuOpen ? styles.logoHidden : ""}
+            onClick={() => setMenuOpen(false)}>
+            <Image
+              src="/logos/websylon-navbar.png"
+              alt="Websylon Logo"
+              width={140}
+              height={40}
+              style={{ width: "180px", height: "auto" }}
+              className={styles.logo}
+              priority
+            />
+          </Link>
 
           {/* Desktop Links */}
           <div className={styles.links}>
@@ -58,13 +69,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* Desktop CTA */}
           <div className={styles.ctaWrapper}>
             <Link href="/kontakt" className={styles.cta}>
               Kontakt
             </Link>
           </div>
-          {/* Hamburger (Mobile) */}
+
+          {/* Hamburger */}
           <button
             className={`${styles.hamburger} ${
               menuOpen ? styles["hamburger--open"] : ""
@@ -77,29 +89,51 @@ export default function Navigation() {
             <span />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`${styles.mobileMenu} ${
-            menuOpen ? styles["mobileMenu--open"] : ""
-          }`}>
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={styles.mobileLink}
-              onClick={() => setMenuOpen(false)}>
-              {label}
-            </Link>
-          ))}
-          <Link
-            href="/kontakt"
-            className={styles.mobileCta}
-            onClick={() => setMenuOpen(false)}>
-            Kontakt
-          </Link>
-        </div>
       </nav>
+
+      {/* Mobile Fullscreen Menu */}
+      <div
+        className={`${styles.mobileMenu} ${
+          menuOpen ? styles["mobileMenu--open"] : ""
+        }`}>
+        <div className={styles.menuTopLine} aria-hidden="true" />
+        <div className={styles.menuBg} aria-hidden="true" />
+
+        <div className={styles.menuInner}>
+          {/* Links */}
+          <nav className={styles.menuNav}>
+            {navLinks.map(({ href, label }, i) => (
+              <Link
+                key={href}
+                href={href}
+                className={`${styles.menuLink} ${
+                  pathname === href ? styles.menuLinkActive : ""
+                }`}
+                onClick={() => setMenuOpen(false)}
+                style={{ animationDelay: `${0.05 + i * 0.06}s` }}>
+                <span className={styles.menuLinkNum}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className={styles.menuLinkLabel}>{label}</span>
+                <span className={styles.menuLinkArrow}>→</span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Bottom */}
+          <div className={styles.menuBottom}>
+            <div className={styles.menuBottomInfo}>
+              <span className={styles.menuBottomSep} />
+            </div>
+            <Link
+              href="/kontakt"
+              className={styles.menuCta}
+              onClick={() => setMenuOpen(false)}>
+              Kostenloses Erstgespräch →
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
