@@ -115,7 +115,6 @@ export default function Navigation() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className={styles.menuLinkLabel}>{label}</span>
-                <span className={styles.menuLinkArrow}>→</span>
               </Link>
             ))}
           </nav>

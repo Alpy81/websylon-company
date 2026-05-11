@@ -372,6 +372,13 @@ export default function Home() {
                 role: "Gründer, Sperrzone24, Verkehrssicherheit",
                 initials: "YK",
               },
+              {
+                quote:
+                  "Dank Websylon haben wir endlich einen digitalen Auftritt, der unsere Kandidaten und Unternehmen gleichermaßen überzeugt. Schnelle Umsetzung, fantastischem Design.",
+                name: "Tina Schneider",
+                role: "Geschäftsführerin, TalentForge HR GmbH",
+                initials: "TS",
+              },
             ].map(({ quote, name, role, initials }) => (
               <div key={name} className={styles.testimonialCard}>
                 <div>

@@ -973,9 +973,18 @@
   transform: translateY(-1px);
 }
 
+/* NEU: 4. Portfolio-Karte auf Desktop ausblenden */
+.portfolioCard:nth-child(4) {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .portfolioGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolioCard:nth-child(4) {
+    display: flex;
   }
 }
 

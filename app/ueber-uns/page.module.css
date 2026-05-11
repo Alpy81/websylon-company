@@ -134,7 +134,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-6);
+  padding: var(--space-8);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg-surface);
@@ -148,11 +148,11 @@
 }
 
 .highlightIcon {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .highlightTitle {
-  font-size: var(--text-base);
+  font-size: var(--text-large);
   font-weight: 600;
   color: var(--color-text-primary);
 }
@@ -190,7 +190,7 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-
+  gap: var(--space-6);
   align-items: center;
   text-align: center;
 }
@@ -202,7 +202,7 @@
   letter-spacing: -0.02em;
   color: var(--color-text-primary);
   position: relative;
-  padding-block: var(--space-8);
+  padding-block: var(--space-4);
 }
 
 .missionQuote::before {
