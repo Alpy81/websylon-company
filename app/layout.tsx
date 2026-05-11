@@ -39,14 +39,17 @@ export const metadata: Metadata = {
   },
 };
 
+const splashScript = `(function(){try{if(!sessionStorage.getItem('splashSeen')){document.documentElement.setAttribute('data-splash','true');}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
+    <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <script dangerouslySetInnerHTML={{ __html: splashScript }} />
         <SplashScreen />
         <Navigation />
         <main style={{ minHeight: "100vh" }}>{children}</main>

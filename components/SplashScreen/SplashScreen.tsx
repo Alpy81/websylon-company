@@ -27,6 +27,7 @@ export default function SplashScreen() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const dismiss = () => {
+    document.documentElement.removeAttribute("data-splash");
     sessionStorage.setItem("splashSeen", "true");
     setState("hiding");
     setTimeout(() => setState("hidden"), 700);

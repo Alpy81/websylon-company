@@ -5,7 +5,7 @@
 
 .page {
   min-height: 100vh;
-  background: var(--color-bg-base);
+  background: var(--color-bg-surface);
   position: relative;
   overflow: hidden;
   padding-top: calc(80px + var(--space-16));
@@ -390,6 +390,7 @@
   transition: border-color var(--transition-fast),
     box-shadow var(--transition-fast);
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
 }
 

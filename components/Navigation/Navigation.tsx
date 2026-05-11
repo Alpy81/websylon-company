@@ -34,17 +34,15 @@ export default function Navigation() {
         className={`${styles.nav} ${scrolled ? styles["nav--scrolled"] : ""}`}>
         <div className={styles.inner}>
           {/* Logo */}
-          <Link href="/" aria-label="Websylon – Zur Startseite">
-            <Image
-              src="/logos/websylon-navbar.png"
-              alt="Websylon Logo"
-              width={0}
-              height={0}
-              sizes="140px"
-              className={styles.logo}
-              priority
-            />
-          </Link>
+          <Image
+            src="/logos/websylon-navbar.png"
+            alt="Websylon Logo"
+            width={140}
+            height={40}
+            style={{ width: "200px", height: "auto" }}
+            className={styles.logo}
+            priority
+          />
 
           {/* Desktop Links */}
           <div className={styles.links}>

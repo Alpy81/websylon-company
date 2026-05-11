@@ -23,7 +23,7 @@ const projekte = [
     image: "/images/demo-steuerkanzlei.jpg",
     tag: "Recht & Finanzen",
     title: "Steuerkanzlei",
-    text: "Seriöser Auftritt für Steuerberater mit Terminbuchung und Kontaktformular.",
+    text: "Seriöser Auftritt für Steuerberater mit moderner Terminbuchungs-Funktion und Kontaktformular.",
     href: "https://tax-office-demo.vercel.app",
   },
   {
@@ -31,7 +31,7 @@ const projekte = [
     image: "/images/demo-sperrzone24.png",
     tag: "Dienstleistungen",
     title: "Sperrzone24",
-    text: "Professioneller Auftritt für Verkehrssicherheit mit modernem Design.",
+    text: "Professioneller Auftritt für die Branche in der Verkehrssicherheit mit modernem Design und Terminbuchung.",
     href: "https://sperrzone24.de",
   },
   {
@@ -143,9 +143,6 @@ export default function Portfolio() {
                       className={styles.image}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className={styles.overlay}>
-                      <span className={styles.overlayBtn}>Demo ansehen →</span>
-                    </div>
                   </div>
                   <div className={styles.cardContent}>
                     <span className={styles.tag}>{p.tag}</span>

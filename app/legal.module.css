@@ -1,0 +1,309 @@
+/* ============================================
+   WEBSYLON – Legal Pages (Shared)
+   Impressum · Datenschutz · AGB
+   ============================================ */
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-16);
+  padding-inline: var(--container-pad);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(140, 239, 185, 0.05) 0%,
+      transparent 65%
+    ),
+    var(--color-bg-base);
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  background: rgba(140, 239, 185, 0.04);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.heroTitle {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.heroAccent {
+  color: var(--color-primary);
+}
+
+.heroMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.heroMetaDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+/* ── Content Section ── */
+.contentSection {
+  padding-bottom: var(--space-32);
+  padding-inline: var(--container-pad);
+  background: var(--color-bg-base);
+}
+
+.contentInner {
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.infoBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.infoBoxItem {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(140, 239, 185, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base);
+  background-image: radial-gradient(
+    rgba(140, 239, 185, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
+
+/* Eck-Bracket oben links */
+.infoBoxItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-top: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg) 0 0 0;
+  opacity: 0.8;
+}
+
+/* Eck-Bracket unten rechts */
+.infoBoxItem::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid rgba(140, 239, 185, 0.35);
+  border-right: 1px solid rgba(140, 239, 185, 0.35);
+  border-radius: 0 0 var(--radius-lg) 0;
+}
+
+.infoBoxItem:hover {
+  border-color: rgba(140, 239, 185, 0.22);
+  box-shadow: 0 0 24px rgba(140, 239, 185, 0.04),
+    inset 0 0 40px rgba(140, 239, 185, 0.02);
+}
+
+.infoBoxIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(140, 239, 185, 0.06);
+  border: 1px solid rgba(140, 239, 185, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(140, 239, 185, 0.12);
+}
+
+.infoBoxLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-mono);
+}
+
+.infoBoxValue {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* ── Legal Card ── */
+.legalCard {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+/* ── Section ── */
+.section {
+  padding: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sectionTitle::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 1.1em;
+  background: var(--color-primary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sectionText {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+
+.sectionText:last-child {
+  margin-bottom: 0;
+}
+
+.sectionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionListItem {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding-left: var(--space-6);
+  position: relative;
+}
+
+.sectionListItem::before {
+  content: "–";
+  position: absolute;
+  left: var(--space-2);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(140, 239, 185, 0.3);
+  transition: border-color var(--transition-fast);
+}
+
+.link:hover {
+  border-color: var(--color-primary);
+}
+
+.highlight {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .infoBox {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .section {
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .section {
+    padding: var(--space-4) var(--space-6);
+  }
+}

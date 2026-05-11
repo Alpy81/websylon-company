@@ -63,3 +63,12 @@ main {
 section {
   border: none !important;
 }
+
+html[data-splash="true"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #101d25;
+  z-index: 998;
+  pointer-events: none;
+}
