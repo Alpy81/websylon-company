@@ -71,7 +71,7 @@ export default function SplashScreen() {
       ))}
 
       <Image
-        src="/images/symbol.png"
+        src="/images/symbol-transparent.png"
         alt=""
         width={120}
         height={120}
@@ -80,7 +80,7 @@ export default function SplashScreen() {
       />
 
       <Image
-        src="/images/symbol.png"
+        src="/images/symbol-transparent.png"
         alt=""
         width={120}
         height={120}
