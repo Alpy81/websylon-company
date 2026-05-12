@@ -37,8 +37,12 @@ export default function SplashScreen() {
     const seen = sessionStorage.getItem("splashSeen");
     if (seen) return;
 
+    // NACHHER
     const raf = requestAnimationFrame(() => {
-      setState("visible");
+      requestAnimationFrame(() => {
+        // ← doppeltes RAF
+        setState("visible");
+      });
     });
 
     timerRef.current = setTimeout(dismiss, 7500);

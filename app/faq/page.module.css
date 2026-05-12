@@ -220,4 +220,8 @@
   .answerText {
     padding: 0 var(--space-6) var(--space-4);
   }
+
+  .hero {
+    padding-top: calc(80px + var(--space-16)); /* ← NEU */
+  }
 }

@@ -634,4 +634,8 @@
   .heroTitle {
     font-size: var(--text-3xl);
   }
+
+  .hero {
+    padding-top: calc(80px + var(--space-16)); /* ← NEU */
+  }
 }
