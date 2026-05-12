@@ -1324,6 +1324,15 @@
     font-size: var(--text-xl);
   }
 
+  .leistungFeatures {
+    align-items: flex-start;
+  }
+
+  .leistungFeature {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .branchenGrid {
     grid-template-columns: 1fr;
   }
