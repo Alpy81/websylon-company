@@ -1307,6 +1307,10 @@
     text-align: center;
   }
 
+  .heroSubtext {
+    font-size: var(--text-xl);
+  }
+
   .leistungen,
   .warum,
   .branchen,
