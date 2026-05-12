@@ -1316,6 +1316,10 @@
     padding-inline: var(--space-4);
   }
 
+  .leistungenSubtext {
+    font-size: var(--text-lg);
+  }
+
   .branchenGrid {
     grid-template-columns: 1fr;
   }
