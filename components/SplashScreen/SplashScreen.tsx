@@ -37,7 +37,6 @@ export default function SplashScreen() {
     const seen = sessionStorage.getItem("splashSeen");
     if (seen) return;
 
-    // NACHHER
     const raf = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         // ← doppeltes RAF
