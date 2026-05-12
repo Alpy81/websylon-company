@@ -1166,8 +1166,6 @@
   }
 
   .heroContent {
-    display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
   }
@@ -1190,6 +1188,21 @@
 
   .warumInner {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .warumContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumBadge {
+    margin-inline: auto;
+  }
+
+  .warumCta {
+    display: flex;
+    justify-content: center;
   }
 
   .portfolioGrid {
@@ -1217,11 +1230,7 @@
   .hero {
     padding-top: calc(80px + var(--space-16));
     padding-bottom: var(--space-16);
-  }
-
-  .heroContent {
-    align-items: center;
-    text-align: center;
+    padding-inline: var(--space-6);
   }
 
   .leistungen,
@@ -1231,10 +1240,39 @@
   .testimonials,
   .ctaBanner {
     padding-block: var(--space-16);
+    padding-inline: var(--space-6);
   }
 
   .leistungenGrid {
     grid-template-columns: 1fr;
+  }
+
+  .leistungCard {
+    align-items: center;
+    text-align: center;
+  }
+
+  .leistungCardTop {
+    justify-content: center;
+  }
+
+  .leistungFeature {
+    justify-content: center;
+  }
+
+  .warumItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumItemContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumItem:hover {
+    transform: translateY(-4px);
   }
 
   .warumStats {
@@ -1260,37 +1298,33 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-inline: var(--space-4);
+  }
+
   .heroContent {
     align-items: center;
     text-align: center;
   }
 
-  .warumContent {
-    align-items: center;
-    text-align: center;
-  }
-
-  .warumBadge {
-    margin-inline: auto;
-  }
-
-  .warumCta {
-    display: flex;
-    justify-content: center;
-  }
-
-  .warumItem {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .warumItemContent {
-    align-items: center;
-    text-align: center;
+  .leistungen,
+  .warum,
+  .branchen,
+  .portfolio,
+  .testimonials,
+  .ctaBanner {
+    padding-inline: var(--space-4);
   }
 
   .branchenGrid {
     grid-template-columns: 1fr;
+  }
+
+  .leistungCard {
+    padding: var(--space-6);
+  }
+
+  .warumItem {
+    padding: var(--space-4) var(--space-6);
   }
 }
