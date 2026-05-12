@@ -137,7 +137,7 @@ const leistungen = [
     id: "mobile",
     icon: <IconPhone />,
     title: "Progressive Web Apps",
-    desc: "Moderne Web-Apps die sich wie native Apps anfühlen – installierbar, offline-fähig und auf allen Plattformen performant.",
+    desc: "Moderne Web-Apps, die sich wie native Apps anfühlen – installierbar, offline-fähig und auf allen Plattformen performant mit hoher Qualität. Hier werden Unterschiede sichtbar.",
     features: [
       "iOS & Android kompatibel",
       "Offline-Funktionalität (PWA)",

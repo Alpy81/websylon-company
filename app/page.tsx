@@ -374,7 +374,7 @@ export default function Home() {
               },
               {
                 quote:
-                  "Dank Websylon haben wir endlich einen digitalen Auftritt, der unsere Kandidaten und Unternehmen gleichermaßen überzeugt. Schnelle Umsetzung, fantastischem Design.",
+                  "Dank Websylon haben wir endlich einen digitalen Auftritt, der unsere Kandidaten und Unternehmen gleichermaßen überzeugt. Schnelle Umsetzung, fantastisches Design.",
                 name: "Tina Schneider",
                 role: "Geschäftsführerin, TalentForge HR GmbH",
                 initials: "TS",

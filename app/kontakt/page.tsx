@@ -125,7 +125,7 @@ const contactMethods = [
 const trustPoints = [
   "Antwort innerhalb von 24 Stunden",
   "Kostenloses Erstgespräch",
-  "Individuelle Beratung ohne Verpflichtung",
+  "Individuelle Beratung",
 ];
 
 /* ── Page Component ── */
@@ -213,7 +213,7 @@ export default function Kontakt() {
                     <div>
                       <span className={styles.metaLabel}>Erreichbarkeit</span>
                       <span className={styles.metaValue}>
-                        Mo – Fr, 09:00 – 18:00 Uhr
+                        Mo – Fr: 09:00 – 18:00 Uhr
                       </span>
                     </div>
                   </div>

@@ -209,36 +209,6 @@
   filter: drop-shadow(0 0 12px rgba(140, 239, 185, 0.5));
 }
 
-/* --- Responsive --- */
-@media (max-width: 1024px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .heroSubtext {
-    max-width: 100%;
-  }
-
-  .heroActions {
-    justify-content: center;
-  }
-
-  .heroBadge {
-    margin-inline: auto;
-  }
-
-  .heroVisual {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding-block: var(--space-24);
-  }
-}
-
 /* --- Leistungen Preview --- */
 .leistungen {
   padding-block: var(--space-24);
@@ -430,13 +400,6 @@
   transform: translateY(-2px);
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .leistungenGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* --- Warum Websylon Preview --- */
 .warum {
   padding-block: var(--space-24);
@@ -609,22 +572,6 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 1024px) {
-  .warumInner {
-    grid-template-columns: 1fr;
-  }
-
-  .warumStats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .warumStats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* --- Branchen Preview --- */
 .branchen {
   padding-block: var(--space-24);
@@ -751,18 +698,6 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-  .branchenGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .branchenGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* --- Portfolio Preview --- */
 .portfolio {
   padding-block: var(--space-24);
@@ -848,12 +783,6 @@
   transition: border-color var(--transition-base),
     box-shadow var(--transition-base), transform var(--transition-base);
   text-decoration: none;
-}
-
-@media (max-width: 1024px) {
-  .portfolioCardTablet {
-    display: flex;
-  }
 }
 
 .portfolioCard:hover {
@@ -973,25 +902,9 @@
   transform: translateY(-1px);
 }
 
-/* NEU: 4. Portfolio-Karte auf Desktop ausblenden */
+/* 4. Portfolio-Karte auf Desktop ausblenden */
 .portfolioCard:nth-child(4) {
   display: none;
-}
-
-@media (max-width: 1024px) {
-  .portfolioGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .portfolioCard:nth-child(4) {
-    display: flex;
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolioGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* --- Testimonials --- */
@@ -1135,16 +1048,9 @@
   font-size: var(--text-sm);
 }
 
-@media (max-width: 1024px) {
-  .testimonialsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonialsGrid {
-    grid-template-columns: 1fr;
-  }
+/* 4. Testimonial auf Desktop ausblenden */
+.testimonialCard:nth-child(4) {
+  display: none;
 }
 
 /* --- CTA Banner --- */
@@ -1249,9 +1155,142 @@
   transform: translateY(-2px);
 }
 
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroSubtext {
+    max-width: 100%;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroBadge {
+    margin-inline: auto;
+  }
+
+  .heroVisual {
+    display: none;
+  }
+
+  .warumInner {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolioCard:nth-child(4) {
+    display: flex;
+  }
+
+  .portfolioCardTablet {
+    display: flex;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonialCard:nth-child(4) {
+    display: flex;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    padding-top: calc(80px + var(--space-16));
+    padding-bottom: var(--space-16);
+  }
+
+  .heroContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .leistungen,
+  .warum,
+  .branchen,
+  .portfolio,
+  .testimonials,
+  .ctaBanner {
+    padding-block: var(--space-16);
+  }
+
+  .leistungenGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .warumStats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .branchenGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
   .ctaBannerActions {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumBadge {
+    margin-inline: auto;
+  }
+
+  .warumCta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .warumItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .warumItemContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .branchenGrid {
+    grid-template-columns: 1fr;
   }
 }

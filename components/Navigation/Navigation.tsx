@@ -47,9 +47,8 @@ export default function Navigation() {
             <Image
               src="/logos/websylon-navbar.png"
               alt="Websylon Logo"
-              width={140}
+              width={200}
               height={40}
-              style={{ width: "180px", height: "auto" }}
               className={styles.logo}
               priority
             />

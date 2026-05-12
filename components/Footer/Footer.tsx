@@ -116,7 +116,6 @@ export default function Footer() {
                   alt="Websylon Logo"
                   width={140}
                   height={40}
-                  style={{ width: "200px", height: "auto" }}
                   className={styles.logo}
                 />
               </Link>
