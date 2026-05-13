@@ -504,6 +504,25 @@
   max-width: 380px;
 }
 
+/* NEU: Datenschutzhinweis */
+.privacyNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.privacyLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(140, 239, 185, 0.3);
+  transition: border-color var(--transition-fast);
+}
+
+.privacyLink:hover {
+  border-color: var(--color-primary);
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .split {

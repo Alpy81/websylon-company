@@ -347,6 +347,14 @@ export default function Kontakt() {
                       disabled={loading}>
                       {loading ? "Wird gesendet..." : "Nachricht senden →"}
                     </button>
+                    {/* NEU: Datenschutzhinweis ↓ */}
+                    <p className={styles.privacyNote}>
+                      Mit dem Absenden stimmen Sie unserer{" "}
+                      <a href="/datenschutz" className={styles.privacyLink}>
+                        Datenschutzerklärung
+                      </a>{" "}
+                      zu.
+                    </p>
                   </form>
                 </>
               )}
