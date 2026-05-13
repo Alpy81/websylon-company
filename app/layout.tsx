@@ -50,7 +50,6 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <script dangerouslySetInnerHTML={{ __html: splashScript }} />
         <CookieBanner />
         <SplashScreen />
         <Navigation />
