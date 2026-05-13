@@ -40,8 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const splashScript = `(function(){try{if(!sessionStorage.getItem('splashSeen')){document.documentElement.setAttribute('data-splash','true');}}catch(e){}})();`;
-
 export default function RootLayout({
   children,
 }: {
