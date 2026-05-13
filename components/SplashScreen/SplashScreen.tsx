@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./SplashScreen.module.css";
@@ -22,33 +21,74 @@ const particles = [
   { size: 5, top: "35%", left: "60%", duration: 8, delay: 2.5 },
 ];
 
+/* ── sessionStorage helper mit try/catch ── */
+const storage = {
+  get: (key: string) => {
+    try {
+      return sessionStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  },
+  set: (key: string, val: string) => {
+    try {
+      sessionStorage.setItem(key, val);
+    } catch {
+      /* ignore */
+    }
+  },
+};
+
 export default function SplashScreen() {
   const [state, setState] = useState<SplashState>("hidden");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const dismiss = () => {
-    document.documentElement.removeAttribute("data-splash");
-    sessionStorage.setItem("splashSeen", "true");
+    /* immer data-splash entfernen, auch wenn storage fehlschlägt */
+    try {
+      document.documentElement.removeAttribute("data-splash");
+    } catch {
+      /* ignore */
+    }
+    storage.set("splashSeen", "true");
     setState("hiding");
     setTimeout(() => setState("hidden"), 700);
   };
 
   useEffect(() => {
-    const seen = sessionStorage.getItem("splashSeen");
-    if (seen) return;
+    const seen = storage.get("splashSeen");
+    if (seen) {
+      /* sicherstellen dass data-splash auch beim Zurücknavigieren entfernt wird */
+      try {
+        document.documentElement.removeAttribute("data-splash");
+      } catch {
+        /* ignore */
+      }
+      return;
+    }
 
     const raf = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        // ← doppeltes RAF
         setState("visible");
       });
     });
 
     timerRef.current = setTimeout(dismiss, 7500);
 
+    /* Fallback: nach 10s wird Splash auf jeden Fall entfernt */
+    const fallback = setTimeout(() => {
+      try {
+        document.documentElement.removeAttribute("data-splash");
+      } catch {
+        /* ignore */
+      }
+      setState("hidden");
+    }, 10000);
+
     return () => {
       cancelAnimationFrame(raf);
       if (timerRef.current) clearTimeout(timerRef.current);
+      clearTimeout(fallback);
     };
   }, []);
 
@@ -73,7 +113,6 @@ export default function SplashScreen() {
           }}
         />
       ))}
-
       <Image
         src="/images/symbol-transparent.png"
         alt=""
@@ -82,7 +121,6 @@ export default function SplashScreen() {
         className={styles.dotsTopRight}
         loading="eager"
       />
-
       <Image
         src="/images/symbol-transparent.png"
         alt=""
@@ -91,7 +129,6 @@ export default function SplashScreen() {
         className={styles.dotsBottomLeft}
         loading="eager"
       />
-
       <div className={styles.textTop}>
         {topWords.map((word, i) => (
           <span key={i} className={styles.word}>
@@ -99,7 +136,6 @@ export default function SplashScreen() {
           </span>
         ))}
       </div>
-
       <div className={styles.logoWrapper}>
         <Image
           src="/logos/home-logo.png"
@@ -110,7 +146,6 @@ export default function SplashScreen() {
           priority
         />
       </div>
-
       <div className={styles.textBottom}>
         {bottomWords.map((word, i) => (
           <span key={i} className={styles.word}>
@@ -118,7 +153,6 @@ export default function SplashScreen() {
           </span>
         ))}
       </div>
-
       <button
         className={styles.skip}
         onClick={dismiss}
