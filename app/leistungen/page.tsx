@@ -149,7 +149,7 @@ const leistungen = [
     id: "seo",
     icon: <IconChart />,
     title: "SEO & Marketing",
-    desc: "Ihre Website wird nur gefunden wenn sie ranking-optimiert ist. Wir sorgen für Sichtbarkeit – technisch und inhaltlich.",
+    desc: "Ihre Website wird nur gefunden wenn sie ranking-optimiert ist. Wir sorgen für Sichtbarkeit und Nachhaltigkeit – technisch und inhaltlich auf den oberen Reihen",
     features: [
       "Google Rankings verbessern",
       "Keyword-Optimierung",
@@ -161,7 +161,7 @@ const leistungen = [
     id: "cms",
     icon: <IconGear />,
     title: "CMS & Wartung",
-    desc: "Mit modernen Content-Management-Systemen pflegen Sie Ihre Website selbst – einfach, intuitiv und ohne technisches Wissen.",
+    desc: "Mit modernen Content-Management-Systemen, pflegen Sie Ihre Website selbst – einfach, intuitiv und ohne technisches Wissen. Genießen Sie großtmögliche Flexibilität",
     features: [
       "WordPress & Strapi",
       "Einfache Content-Pflege",

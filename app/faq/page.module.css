@@ -152,7 +152,7 @@
 .answerText {
   padding: 0 var(--space-8) var(--space-6);
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: #c2f2d8;
   line-height: 1.8;
 }
 
@@ -183,7 +183,7 @@
 
 .ctaText {
   font-size: var(--text-base);
-  color: var(--color-text-secondary);
+  color: #c2f2d8;
   line-height: 1.7;
 }
 

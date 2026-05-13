@@ -158,6 +158,8 @@
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.8;
+  opacity: 0.85;
+  font-weight: 500;
 }
 
 .cardFeatures {
@@ -172,7 +174,9 @@
   align-items: center;
   gap: var(--space-3);
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: #c2f2d8;
+  opacity: 0.75;
+  font-weight: 500;
 }
 
 .cardFeatureCheck {
@@ -288,7 +292,7 @@
 
 .prozessText {
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: #c2f2d8;
   line-height: 1.7;
 }
 
@@ -319,7 +323,7 @@
 
 .ctaText {
   font-size: var(--text-base);
-  color: var(--color-text-secondary);
+  color: #c2f2d8;
   line-height: 1.7;
 }
 
