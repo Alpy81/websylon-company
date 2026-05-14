@@ -180,7 +180,7 @@ export default function Portfolio() {
             Level bringen.
           </p>
           <Link href="/kontakt" className={styles.ctaBtn}>
-            Jetzt Kontakt aufnehmen →
+            Jetzt Kontakt aufnehmen
           </Link>
         </div>
       </section>

@@ -413,7 +413,7 @@ export default function Home() {
           </p>
           <div className={styles.ctaBannerActions}>
             <Link href="/kontakt" className={styles.ctaBannerBtnPrimary}>
-              Kostenloses Erstgespräch →
+              Kostenloses Erstgespräch
             </Link>
             <Link href="/leistungen" className={styles.ctaBannerBtnSecondary}>
               Leistungen ansehen

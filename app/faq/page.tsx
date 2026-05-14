@@ -99,7 +99,7 @@ export default function FAQ() {
             und beraten Sie kostenlos und unverbindlich.
           </p>
           <Link href="/kontakt" className={styles.ctaBtn}>
-            Jetzt Kontakt aufnehmen →
+            Jetzt Kontakt aufnehmen
           </Link>
         </div>
       </section>

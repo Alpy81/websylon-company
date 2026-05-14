@@ -267,7 +267,7 @@ export default function Leistungen() {
           </p>
           <div className={styles.ctaActions}>
             <Link href="/kontakt" className={styles.ctaBtnPrimary}>
-              Kostenloses Erstgespräch →
+              Kostenloses Erstgespräch
             </Link>
             <Link href="/portfolio" className={styles.ctaBtnSecondary}>
               Referenzen ansehen

@@ -345,7 +345,7 @@ export default function Kontakt() {
                       type="submit"
                       className={styles.submitBtn}
                       disabled={loading}>
-                      {loading ? "Wird gesendet..." : "Nachricht senden →"}
+                      {loading ? "Wird gesendet..." : "Nachricht senden "}
                     </button>
                     {/* NEU: Datenschutzhinweis ↓ */}
                     <p className={styles.privacyNote}>
