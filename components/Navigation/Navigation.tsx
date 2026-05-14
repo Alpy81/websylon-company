@@ -127,7 +127,7 @@ export default function Navigation() {
               href="/kontakt"
               className={styles.menuCta}
               onClick={() => setMenuOpen(false)}>
-              Kostenloses Erstgespräch →
+              Jetzt kostenlos Kontakt aufnehmen
             </Link>
           </div>
         </div>
