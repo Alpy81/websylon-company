@@ -155,7 +155,7 @@ export default function Home() {
           </div>
           <div className={styles.leistungenCta}>
             <Link href="/leistungen" className={styles.leistungenCtaBtn}>
-              Alle Leistungen entdecken →
+              Alle Leistungen entdecken
             </Link>
           </div>
         </div>
@@ -284,7 +284,7 @@ export default function Home() {
           </div>
           <div className={styles.branchenCta}>
             <Link href="/branchen" className={styles.branchenCtaBtn}>
-              Alle Branchen entdecken →
+              Alle Branchen entdecken
             </Link>
           </div>
         </div>

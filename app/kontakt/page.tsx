@@ -105,6 +105,7 @@ const contactMethods = [
     value: "info@web-sylon.de",
     href: "mailto:info@web-sylon.de",
     external: false,
+    showArrow: false,
   },
   {
     icon: <PhoneIcon />,
@@ -112,6 +113,7 @@ const contactMethods = [
     value: "+49 171 831 73 48",
     href: "tel:+491718317348",
     external: false,
+    showArrow: false,
   },
   {
     icon: <WhatsAppIcon />,
@@ -119,6 +121,7 @@ const contactMethods = [
     value: "Jetzt schreiben",
     href: "https://wa.me/491718317348",
     external: true,
+    showArrow: true,
   },
 ];
 
@@ -132,6 +135,18 @@ const trustPoints = [
 export default function Kontakt() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText("info@web-sylon.de");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = "mailto:info@web-sylon.de";
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -184,6 +199,9 @@ export default function Kontakt() {
                       key={method.label}
                       href={method.href}
                       className={styles.contactItem}
+                      onClick={
+                        method.label === "E-Mail" ? handleEmailClick : undefined
+                      }
                       {...(method.external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}>
@@ -193,12 +211,16 @@ export default function Kontakt() {
                           {method.label}
                         </span>
                         <span className={styles.contactValue}>
-                          {method.value}
+                          {method.label === "E-Mail" && copied
+                            ? "✓ Kopiert!"
+                            : method.value}
                         </span>
                       </div>
-                      <span className={styles.contactArrow}>
-                        <ArrowIcon />
-                      </span>
+                      {method.showArrow && (
+                        <span className={styles.contactArrow}>
+                          <ArrowIcon />
+                        </span>
+                      )}
                     </a>
                   ))}
                 </div>
@@ -345,9 +367,9 @@ export default function Kontakt() {
                       type="submit"
                       className={styles.submitBtn}
                       disabled={loading}>
-                      {loading ? "Wird gesendet..." : "Nachricht senden "}
+                      {loading ? "Wird gesendet..." : "Nachricht senden →"}
                     </button>
-                    {/* NEU: Datenschutzhinweis ↓ */}
+
                     <p className={styles.privacyNote}>
                       Mit dem Absenden stimmen Sie unserer{" "}
                       <a href="/datenschutz" className={styles.privacyLink}>
