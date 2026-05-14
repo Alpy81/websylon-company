@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+const splashScript = `(function(){try{if(!sessionStorage.getItem('splashSeen')){document.documentElement.setAttribute('data-splash','true');}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: {
@@ -47,7 +49,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
+      {/* NEU: Script im head statt im body ↓ */}
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: splashScript }} />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* ALT: <script dangerouslySetInnerHTML={{ __html: splashScript }} /> */}
         <CookieBanner />
         <SplashScreen />
         <Navigation />
