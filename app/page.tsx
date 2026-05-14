@@ -332,7 +332,7 @@ export default function Home() {
           </div>
           <div className={styles.portfolioCta}>
             <Link href="/portfolio" className={styles.portfolioCtaBtn}>
-              Alle Projekte ansehen →
+              Alle Projekte ansehen
             </Link>
           </div>
         </div>
