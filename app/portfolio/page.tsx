@@ -110,15 +110,15 @@ export default function Portfolio() {
         <div className={styles.heroInner}>
           <div className={styles.badge}>
             <span className={styles.badgeDot} />
-            Unsere Arbeiten
+            Unser Portfolio
           </div>
           <h1 className={styles.heroTitle}>
             Projekte, die{" "}
             <span className={styles.heroTitleAccent}>überzeugen</span>
           </h1>
           <p className={styles.heroSubtext}>
-            Ein Überblick über unsere realisierten Projekte – modern, performant
-            und individuell auf die jeweilige Branche zugeschnitten.
+            Ein Überlick unserer Demo-Projekte – Eine große Auswahl von Branchen
+            werden von uns abgedeckt. So könnte Ihre Webseite aussehen!
           </p>
         </div>
       </section>

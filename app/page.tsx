@@ -293,14 +293,15 @@ export default function Home() {
       <section className={styles.portfolio}>
         <div className={styles.portfolioInner}>
           <div className={styles.portfolioHeader}>
-            <span className={styles.portfolioBadge}>Unsere Arbeiten</span>
+            <span className={styles.portfolioBadge}>Portfolio</span>
             <h2 className={styles.portfolioTitle}>
               Projekte, die{" "}
               <span className={styles.portfolioTitleAccent}>überzeugen</span>
             </h2>
             <p className={styles.portfolioSubtext}>
-              Ein Auszug aus unseren realisierten Projekten – modern, performant
-              und individuell auf die jeweilige Branche zugeschnitten.
+              Werfen Sie einen Blick auf unsere Demo-Projekte – modern,
+              performant und individuell auf die jeweilige Branche
+              zugeschnitten.
             </p>
           </div>
           <div className={styles.portfolioGrid}>
@@ -338,7 +339,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.testimonials}>
+      {/* <section className={styles.testimonials}>
         <div className={styles.testimonialsInner}>
           <div className={styles.testimonialsHeader}>
             <span className={styles.testimonialsBadge}>Kundenstimmen</span>
@@ -397,7 +398,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA Banner ── */}
       <section className={styles.ctaBanner}>
