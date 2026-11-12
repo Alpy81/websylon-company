@@ -57,6 +57,10 @@ const projekte = [
     title: "Online-Shop",
     text: "Vollständiger E-Commerce Shop mit Payment-Integration.",
   },
+];
+
+/*
+  
   {
     type: "soon",
     icon: "🍽️",
@@ -101,6 +105,8 @@ const projekte = [
   },
 ];
 
+*/
+
 export default function Portfolio() {
   return (
     <main>
@@ -134,7 +140,8 @@ export default function Portfolio() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.card}>
+                  className={styles.card}
+                >
                   <div className={styles.imageWrapper}>
                     <Image
                       src={p.image!}
