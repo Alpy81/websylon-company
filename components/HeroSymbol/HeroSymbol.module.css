@@ -1,0 +1,145 @@
+/* ============================================
+   XELUVIA – Hero-Symbol (3D-Raute mit funkelndem x)
+   ============================================ */
+
+.scene {
+  --size: var(--hero-symbol-size, 150px);
+  --p: calc(var(--size) / 7); /* Rastermaß */
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  perspective: calc(var(--size) * 4.7);
+  filter: drop-shadow(0 0 14px rgba(46, 211, 154, 0.3));
+}
+
+.object {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-14deg) rotateY(0deg);
+  animation: spin 9s linear infinite;
+}
+
+/* ── Punkte ── */
+.dot {
+  position: absolute;
+  left: calc(50% + var(--i) * var(--p) - var(--d) * var(--p) / 2);
+  top: calc(50% + var(--j) * var(--p) - var(--d) * var(--p) / 2);
+  width: calc(var(--d) * var(--p));
+  height: calc(var(--d) * var(--p));
+  border-radius: 50%;
+  background: #8cefb9;
+  opacity: var(--o);
+  transform: translateZ(calc(var(--z) * var(--p) * 0.47));
+}
+
+/* ── x-Flächen (Vorder- und Rückseite) ── */
+.face {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--p) * 2.1);
+  height: calc(var(--p) * 2.7);
+  margin-left: calc(var(--p) * -1.05);
+  margin-top: calc(var(--p) * -1.35);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.faceFront {
+  /* x liegt in der Mittelebene: Punkte der vorderen Schicht davor, der hinteren dahinter */
+  transform: translateZ(0.5px);
+}
+
+.faceBack {
+  transform: rotateY(180deg) translateZ(0.5px);
+}
+
+.x {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: glitter 2.6s ease-in-out infinite;
+}
+
+.xPath {
+  stroke: #0d4d3a;
+  stroke-width: 3;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+}
+
+.shine {
+  animation: shine 3.4s ease-in-out infinite;
+}
+
+.sparkle {
+  position: absolute;
+  fill: #a6f5cb;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: twinkle 2.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px rgba(140, 239, 185, 0.95));
+}
+
+/* ── Animationen ── */
+@keyframes spin {
+  from {
+    transform: rotateX(-14deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-14deg) rotateY(360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(0);
+  }
+  60%,
+  100% {
+    transform: translateX(125px);
+  }
+}
+
+@keyframes glitter {
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(46, 211, 154, 0.5));
+  }
+  50% {
+    filter: brightness(1.12) drop-shadow(0 0 7px rgba(46, 211, 154, 0.85));
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+  }
+  45%,
+  55% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+  }
+}
+
+/* ── Bewegung reduzieren: statisch mit leichter Drehung ── */
+@media (prefers-reduced-motion: reduce) {
+  .object {
+    animation: none;
+    transform: rotateX(-14deg) rotateY(-24deg);
+  }
+
+  .x,
+  .shine {
+    animation: none;
+  }
+
+  .sparkle {
+    animation: none;
+    opacity: 0;
+  }
+}

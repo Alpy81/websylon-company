@@ -1,5 +1,5 @@
 /* ============================================
-   WEBSYLON – Navigation
+   XELUVIA – Navigation
    ============================================ */
 
 .nav {
@@ -32,7 +32,7 @@
 }
 
 .logo {
-  width: 200px;
+  width: 160px;
   height: auto;
   justify-self: start;
 }
@@ -404,5 +404,11 @@
 @media (max-width: 480px) {
   .logo {
     width: 135px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .logo {
+    width: 200px;
   }
 }

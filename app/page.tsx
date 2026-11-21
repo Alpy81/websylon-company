@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
+import HeroSymbol from "@/components/HeroSymbol/HeroSymbol";
 
 const leistungenPreview = [
   {
@@ -105,14 +106,7 @@ export default function Home() {
           <div className={styles.heroVisual}>
             <div className={styles.heroGlobe}>
               <div className={styles.heroGlobeInner}>
-                <Image
-                  src="/images/symbol-transparent.png"
-                  alt="Websylon Symbol"
-                  width={100}
-                  height={100}
-                  className={styles.heroSymbol}
-                  priority
-                />
+                <HeroSymbol />
               </div>
             </div>
           </div>
@@ -311,7 +305,8 @@ export default function Home() {
                 href={href}
                 className={styles.portfolioCard}
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <div className={styles.portfolioImageWrapper}>
                   <Image
                     src={image}

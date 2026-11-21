@@ -1,5 +1,5 @@
 /* ============================================
-   WEBSYLON – Home Page
+   XELUVIA – Home Page
    ============================================ */
 
 /* --- Hero --- */
@@ -18,7 +18,8 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse at 60% 40%,
       rgba(140, 239, 185, 0.05) 0%,
       transparent 55%
@@ -30,10 +31,8 @@
 .heroGrid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(
-      rgba(140, 239, 185, 0.03) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(140, 239, 185, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(140, 239, 185, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 0;
@@ -116,8 +115,10 @@
   background: var(--color-primary);
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: background-color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
   letter-spacing: 0.04em;
 }
 
@@ -137,7 +138,9 @@
   border: 1px solid #8cefb9;
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: border-color var(--transition-fast), color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
   letter-spacing: 0.04em;
 }
@@ -284,8 +287,10 @@
     var(--color-bg-surface),
     var(--color-bg-elevated)
   );
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -328,7 +333,9 @@
   color: var(--color-primary);
   opacity: 0;
   transform: translateX(-8px);
-  transition: opacity var(--transition-base), transform var(--transition-base);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
 }
 
 .leistungCard:hover .leistungArrow {
@@ -390,7 +397,9 @@
   border: 1px solid #8cefb9;
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: border-color var(--transition-fast), color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -480,7 +489,8 @@
   border-radius: var(--radius-lg);
   background: var(--color-bg-elevated);
   text-align: center;
-  transition: border-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
@@ -515,8 +525,10 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg-elevated);
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 
 .warumItem:hover {
@@ -562,8 +574,10 @@
   background: var(--color-primary);
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: background-color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .warumCtaBtn:hover {
@@ -645,8 +659,10 @@
   border-radius: var(--radius-xl);
   background: var(--color-bg-elevated);
   text-align: center;
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   cursor: default;
 }
 
@@ -688,7 +704,9 @@
   border: 1px solid #8cefb9;
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: border-color var(--transition-fast), color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -768,8 +786,10 @@
   border-radius: var(--radius-xl);
   background: var(--color-bg-surface);
   overflow: hidden;
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   text-decoration: none;
 }
 
@@ -780,8 +800,10 @@
   border-radius: var(--radius-xl);
   background: var(--color-bg-surface);
   overflow: hidden;
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   text-decoration: none;
 }
 
@@ -871,7 +893,9 @@
   border: 1px solid #8cefb9;
   padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-full);
-  transition: border-color var(--transition-fast), color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -893,7 +917,8 @@
   border-radius: var(--radius-full);
   margin-top: var(--space-2);
   width: fit-content;
-  transition: background-color var(--transition-fast),
+  transition:
+    background-color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -975,8 +1000,10 @@
     var(--color-bg-elevated),
     var(--color-bg-base)
   );
-  transition: border-color var(--transition-base),
-    box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   position: relative;
 }
 
@@ -1124,8 +1151,10 @@
   padding: var(--space-4) var(--space-12);
   border-radius: var(--radius-full);
   letter-spacing: 0.04em;
-  transition: background-color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .ctaBannerBtnPrimary:hover {
@@ -1145,7 +1174,9 @@
   padding: var(--space-4) var(--space-12);
   border-radius: var(--radius-full);
   letter-spacing: 0.04em;
-  transition: border-color var(--transition-fast), color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
     transform var(--transition-fast);
 }
 
@@ -1183,7 +1214,20 @@
   }
 
   .heroVisual {
-    display: none;
+    order: -1;
+    height: auto;
+    margin-bottom: var(--space-4);
+  }
+
+  .heroGlobe {
+    width: 280px;
+    height: 280px;
+  }
+
+  .heroGlobeInner {
+    width: 170px;
+    height: 170px;
+    --hero-symbol-size: 120px;
   }
 
   .warumInner {
@@ -1231,6 +1275,17 @@
     padding-top: calc(80px + var(--space-16));
     padding-bottom: var(--space-16);
     padding-inline: var(--space-6);
+  }
+
+  .heroGlobe {
+    width: 240px;
+    height: 240px;
+  }
+
+  .heroGlobeInner {
+    width: 150px;
+    height: 150px;
+    --hero-symbol-size: 104px;
   }
 
   .leistungen,
@@ -1302,6 +1357,17 @@
     padding-inline: var(--space-4);
   }
 
+  .heroGlobe {
+    width: 200px;
+    height: 200px;
+  }
+
+  .heroGlobeInner {
+    width: 124px;
+    height: 124px;
+    --hero-symbol-size: 88px;
+  }
+
   .heroContent {
     align-items: center;
     text-align: center;
@@ -1343,5 +1409,23 @@
 
   .warumItem {
     padding: var(--space-4) var(--space-6);
+  }
+}
+
+/* 4K / große Monitore */
+@media (min-width: 2200px) {
+  .heroVisual {
+    height: 620px;
+  }
+
+  .heroGlobe {
+    width: 440px;
+    height: 440px;
+  }
+
+  .heroGlobeInner {
+    width: 260px;
+    height: 260px;
+    --hero-symbol-size: 190px;
   }
 }
