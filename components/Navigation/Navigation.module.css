@@ -9,8 +9,10 @@
   right: 0;
   z-index: calc(var(--z-nav) + 2);
   padding-block: var(--space-4);
-  transition: background-color var(--transition-base),
-    backdrop-filter var(--transition-base), border-color var(--transition-base);
+  transition:
+    background-color var(--transition-base),
+    backdrop-filter var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .nav--scrolled {
@@ -30,7 +32,7 @@
 }
 
 .logo {
-  width: 190px;
+  width: 200px;
   height: auto;
   justify-self: start;
 }
@@ -95,8 +97,10 @@
   border-radius: var(--radius-full);
   font-weight: 600;
   letter-spacing: 0.04em;
-  transition: background-color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .cta:hover {
@@ -128,8 +132,11 @@
   height: 2px;
   background: var(--color-primary);
   border-radius: var(--radius-full);
-  transition: transform var(--transition-base), opacity var(--transition-base),
-    width var(--transition-base), background var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    width var(--transition-base),
+    background var(--transition-base);
 }
 
 .hamburger span:nth-child(1) {
@@ -176,7 +183,8 @@
   pointer-events: none;
   opacity: 0;
   transform: translateY(-12px);
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+  transition:
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -277,7 +285,9 @@
   color: var(--color-text-muted);
   opacity: 0;
   transform: translateX(-8px);
-  transition: opacity var(--transition-fast), transform var(--transition-fast),
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
     color var(--transition-fast);
 }
 
@@ -354,8 +364,10 @@
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-full);
   letter-spacing: 0.04em;
-  transition: background-color var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .menuCta:hover {
@@ -385,12 +397,12 @@
 
 @media (max-width: 768px) {
   .logo {
-    width: 140px;
+    width: 150px;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 140px;
+    width: 135px;
   }
 }

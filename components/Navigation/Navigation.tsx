@@ -36,21 +36,24 @@ export default function Navigation() {
   return (
     <header>
       <nav
-        className={`${styles.nav} ${scrolled ? styles["nav--scrolled"] : ""}`}>
+        className={`${styles.nav} ${scrolled ? styles["nav--scrolled"] : ""}`}
+      >
         <div className={styles.inner}>
           {/* Logo */}
           <Link
             href="/"
-            aria-label="Websylon – Zur Startseite"
+            aria-label="xeluvia – Zur Startseite"
             className={menuOpen ? styles.logoHidden : ""}
-            onClick={() => setMenuOpen(false)}>
+            onClick={() => setMenuOpen(false)}
+          >
             <Image
-              src="/logos/websylon-navbar.png"
-              alt="Websylon Logo"
-              width={200}
-              height={40}
+              src="/logos/xeluvia-logo-transparent.svg"
+              alt="xeluvia Logo"
+              width={218}
+              height={50}
               className={styles.logo}
               priority
+              unoptimized
             />
           </Link>
 
@@ -62,7 +65,8 @@ export default function Navigation() {
                 href={href}
                 className={`${styles.link} ${
                   pathname === href ? styles.linkActive : ""
-                }`}>
+                }`}
+              >
                 {label}
               </Link>
             ))}
@@ -82,7 +86,8 @@ export default function Navigation() {
             }`}
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
-            aria-expanded={menuOpen}>
+            aria-expanded={menuOpen}
+          >
             <span />
             <span />
             <span />
@@ -94,7 +99,8 @@ export default function Navigation() {
       <div
         className={`${styles.mobileMenu} ${
           menuOpen ? styles["mobileMenu--open"] : ""
-        }`}>
+        }`}
+      >
         <div className={styles.menuTopLine} aria-hidden="true" />
         <div className={styles.menuBg} aria-hidden="true" />
 
@@ -109,7 +115,8 @@ export default function Navigation() {
                   pathname === href ? styles.menuLinkActive : ""
                 }`}
                 onClick={() => setMenuOpen(false)}
-                style={{ animationDelay: `${0.05 + i * 0.06}s` }}>
+                style={{ animationDelay: `${0.05 + i * 0.06}s` }}
+              >
                 <span className={styles.menuLinkNum}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -126,7 +133,8 @@ export default function Navigation() {
             <Link
               href="/kontakt"
               className={styles.menuCta}
-              onClick={() => setMenuOpen(false)}>
+              onClick={() => setMenuOpen(false)}
+            >
               Jetzt kostenlos Kontakt aufnehmen
             </Link>
           </div>
