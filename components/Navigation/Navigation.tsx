@@ -42,14 +42,14 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="xeluvia – Zur Startseite"
+            aria-label="xenuveon – Zur Startseite"
             className={menuOpen ? styles.logoHidden : ""}
             onClick={() => setMenuOpen(false)}
           >
             <Image
-              src="/logos/xeluvia-logo-transparent.svg"
-              alt="xeluvia Logo"
-              width={218}
+              src="/logos/xenuveon-logo-transparent.svg"
+              alt="xenuveon Logo"
+              width={310}
               height={50}
               className={styles.logo}
               priority

@@ -98,7 +98,8 @@ export default function SplashScreen() {
     <div
       className={`${styles.splash} ${
         state === "hiding" ? styles["splash--hidden"] : ""
-      }`}>
+      }`}
+    >
       {particles.map((p, i) => (
         <span
           key={i}
@@ -156,7 +157,8 @@ export default function SplashScreen() {
       <button
         className={styles.skip}
         onClick={dismiss}
-        aria-label="Intro überspringen">
+        aria-label="Intro überspringen"
+      >
         Überspringen
       </button>
     </div>

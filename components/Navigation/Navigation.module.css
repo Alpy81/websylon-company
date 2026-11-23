@@ -32,7 +32,7 @@
 }
 
 .logo {
-  width: 160px;
+  width: 220px;
   height: auto;
   justify-self: start;
 }
@@ -397,13 +397,13 @@
 
 @media (max-width: 768px) {
   .logo {
-    width: 150px;
+    width: 190px;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 135px;
+    width: 170px;
   }
 }
 

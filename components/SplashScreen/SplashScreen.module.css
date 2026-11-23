@@ -14,7 +14,9 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
 }
 
 .splash--hidden {
@@ -67,7 +69,8 @@
   background: rgba(16, 29, 37, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0 30px rgba(140, 239, 185, 0.2),
+  box-shadow:
+    0 0 30px rgba(140, 239, 185, 0.2),
     0 0 60px rgba(140, 239, 185, 0.1);
 }
 
