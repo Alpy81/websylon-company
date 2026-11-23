@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import HeroSymbol from "../HeroSymbol/HeroSymbol";
 import styles from "./SplashScreen.module.css";
 
 type SplashState = "visible" | "hiding" | "hidden";
 
 const topWords = ["Professionell", "auftreten", "mit", ".."];
-const bottomWords = ["Webseiten,", "die", "beindrucken", ".."];
+const bottomWords = ["Ergebnisse,", "die", "beeindrucken", ".."];
 
 const particles = [
   { size: 6, top: "15%", left: "10%", duration: 8, delay: 0.5 },
@@ -51,6 +52,7 @@ export default function SplashScreen() {
       /* ignore */
     }
     storage.set("splashSeen", "true");
+    window.dispatchEvent(new Event("splash:done"));
     setState("hiding");
     setTimeout(() => setState("hidden"), 700);
   };
@@ -73,7 +75,7 @@ export default function SplashScreen() {
       });
     });
 
-    timerRef.current = setTimeout(dismiss, 7500);
+    timerRef.current = setTimeout(dismiss, 8300);
 
     /* Fallback: nach 10s wird Splash auf jeden Fall entfernt */
     const fallback = setTimeout(() => {
@@ -82,6 +84,7 @@ export default function SplashScreen() {
       } catch {
         /* ignore */
       }
+      window.dispatchEvent(new Event("splash:done"));
       setState("hidden");
     }, 10000);
 
@@ -114,22 +117,12 @@ export default function SplashScreen() {
           }}
         />
       ))}
-      <Image
-        src="/images/symbol-transparent.png"
-        alt=""
-        width={120}
-        height={120}
-        className={styles.dotsTopRight}
-        loading="eager"
-      />
-      <Image
-        src="/images/symbol-transparent.png"
-        alt=""
-        width={120}
-        height={120}
-        className={styles.dotsBottomLeft}
-        loading="eager"
-      />
+      <div className={styles.dotsTopRight} aria-hidden="true">
+        <HeroSymbol />
+      </div>
+      <div className={styles.dotsBottomLeft} aria-hidden="true">
+        <HeroSymbol />
+      </div>
       <div className={styles.textTop}>
         {topWords.map((word, i) => (
           <span key={i} className={styles.word}>
@@ -139,12 +132,13 @@ export default function SplashScreen() {
       </div>
       <div className={styles.logoWrapper}>
         <Image
-          src="/logos/home-logo.png"
-          alt="Websylon"
-          width={300}
-          height={300}
+          src="/logos/xenuveon-wordmark.svg"
+          alt="xenuveon"
+          width={310}
+          height={50}
           className={styles.logo}
           priority
+          unoptimized
         />
       </div>
       <div className={styles.textBottom}>

@@ -21,19 +21,30 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) {
-      const splashSeen = sessionStorage.getItem("splashSeen");
-      const delay = splashSeen ? 800 : 8200;
+    if (stored) return;
+
+    const showBanner = (wait: number) => {
       setTimeout(() => {
         requestAnimationFrame(() => setVisible(true));
-      }, delay);
+      }, wait);
+    };
+
+    /* Splash wurde in dieser Sitzung schon gezeigt → fast sofort */
+    if (sessionStorage.getItem("splashSeen")) {
+      showBanner(800);
+      return;
     }
+
+    /* sonst warten, bis der Splash fertig ist */
+    const onSplashDone = () => showBanner(400);
+    window.addEventListener("splash:done", onSplashDone, { once: true });
+    return () => window.removeEventListener("splash:done", onSplashDone);
   }, []);
 
   const save = (state: ConsentState) => {
     localStorage.setItem(
       STORAGE_KEY,
-      JSON.stringify({ ...state, necessary: true, timestamp: Date.now() })
+      JSON.stringify({ ...state, necessary: true, timestamp: Date.now() }),
     );
     setVisible(false);
   };
@@ -53,7 +64,8 @@ export default function CookieBanner() {
       className={styles.overlay}
       role="dialog"
       aria-modal="true"
-      aria-label="Cookie-Einstellungen">
+      aria-label="Cookie-Einstellungen"
+    >
       <div className={styles.banner}>
         <div className={styles.topLine} aria-hidden="true" />
 
@@ -101,7 +113,8 @@ export default function CookieBanner() {
               </div>
               <div
                 className={`${styles.toggle} ${styles.toggleFixed}`}
-                aria-label="Immer aktiv">
+                aria-label="Immer aktiv"
+              >
                 <div className={styles.toggleTrack}>
                   <div className={styles.toggleThumb} />
                 </div>
@@ -124,11 +137,13 @@ export default function CookieBanner() {
                 className={styles.toggle}
                 onClick={() => toggle("analytics")}
                 aria-pressed={consent.analytics}
-                aria-label="Analytik-Cookies">
+                aria-label="Analytik-Cookies"
+              >
                 <div
                   className={`${styles.toggleTrack} ${
                     consent.analytics ? styles.toggleTrackOn : ""
-                  }`}>
+                  }`}
+                >
                   <div
                     className={`${styles.toggleThumb} ${
                       consent.analytics ? styles.toggleThumbOn : ""
@@ -153,11 +168,13 @@ export default function CookieBanner() {
                 className={styles.toggle}
                 onClick={() => toggle("marketing")}
                 aria-pressed={consent.marketing}
-                aria-label="Marketing-Cookies">
+                aria-label="Marketing-Cookies"
+              >
                 <div
                   className={`${styles.toggleTrack} ${
                     consent.marketing ? styles.toggleTrackOn : ""
-                  }`}>
+                  }`}
+                >
                   <div
                     className={`${styles.toggleThumb} ${
                       consent.marketing ? styles.toggleThumbOn : ""
@@ -175,13 +192,15 @@ export default function CookieBanner() {
             <>
               <button
                 className={styles.btnSettings}
-                onClick={() => setShowSettings(true)}>
+                onClick={() => setShowSettings(true)}
+              >
                 Einstellungen
               </button>
               <div className={styles.actionsPrimary}>
                 <button
                   className={styles.btnNecessary}
-                  onClick={acceptNecessary}>
+                  onClick={acceptNecessary}
+                >
                   Nur notwendige
                 </button>
                 <button className={styles.btnAccept} onClick={acceptAll}>
@@ -193,13 +212,15 @@ export default function CookieBanner() {
             <>
               <button
                 className={styles.btnSettings}
-                onClick={() => setShowSettings(false)}>
+                onClick={() => setShowSettings(false)}
+              >
                 ← Zurück
               </button>
               <div className={styles.actionsPrimary}>
                 <button
                   className={styles.btnNecessary}
-                  onClick={acceptNecessary}>
+                  onClick={acceptNecessary}
+                >
                   Nur notwendige
                 </button>
                 <button className={styles.btnAccept} onClick={saveCustom}>
