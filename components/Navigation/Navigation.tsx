@@ -42,15 +42,15 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="xenuveon – Zur Startseite"
+            aria-label="xyliviatec – Zur Startseite"
             className={menuOpen ? styles.logoHidden : ""}
             onClick={() => setMenuOpen(false)}
           >
             <Image
-              src="/logos/xenuveon-logo-transparent.svg"
-              alt="xenuveon Logo"
+              src="/logos/xyliviatec-logo-transparent.svg"
+              alt="xyliviatec Logo"
               width={310}
-              height={50}
+              height={57}
               className={styles.logo}
               priority
               unoptimized

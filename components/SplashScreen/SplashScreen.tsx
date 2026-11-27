@@ -132,10 +132,10 @@ export default function SplashScreen() {
       </div>
       <div className={styles.logoWrapper}>
         <Image
-          src="/logos/xenuveon-wordmark.svg"
-          alt="xenuveon"
+          src="/logos/xyliviatec-wordmark.svg"
+          alt="xylivia"
           width={310}
-          height={50}
+          height={72}
           className={styles.logo}
           priority
           unoptimized

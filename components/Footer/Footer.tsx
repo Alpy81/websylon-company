@@ -114,12 +114,12 @@ export default function Footer() {
           {/* ── Brand ── */}
           <div className={styles.brand}>
             <div className={styles.brandHead}>
-              <Link href="/" aria-label="xenuveon – Zur Startseite">
+              <Link href="/" aria-label="xylivia – Zur Startseite">
                 <Image
-                  src="/logos/xenuveon-logo-transparent.svg"
-                  alt="xenuveon Logo"
+                  src="/logos/xyliviatec-logo-transparent.svg"
+                  alt="xylivia Logo"
                   width={310}
-                  height={50}
+                  height={57}
                   className={styles.logo}
                   unoptimized
                 />
@@ -224,7 +224,7 @@ export default function Footer() {
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
               <p className={styles.copyright}>
-                {year} xenuveon – Alperen Ertas. Alle Rechte vorbehalten.
+                {year} xyliviatec – Alperen Ertas. Alle Rechte vorbehalten.
               </p>
             </div>
             <div className={styles.bottomRight}>
