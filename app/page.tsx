@@ -83,16 +83,16 @@ export default function Home() {
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
               <span className={styles.heroBadgeDot} />
-              Professionelle Webentwicklung
+              Professionelle Web & App-Entwicklung
             </div>
             <h1 className={styles.heroTitle}>
-              Webseiten, die{" "}
+              Webseiten <br></br>und Apps, <br></br>die{" "}
               <span className={styles.heroTitleAccent}>Eindruck</span>{" "}
               hinterlassen.
             </h1>
             <p className={styles.heroSubtext}>
-              Wir entwickeln digitale Auftritte für Unternehmen, die mehr wollen
-              als nur online präsent zu sein.
+              Wir entwickeln Websites, Online-Shops und Apps für Unternehmen,
+              die mehr wollen als nur online präsent zu sein.
             </p>
             <div className={styles.heroActions}>
               <Link href="/kontakt" className={styles.btnPrimary}>

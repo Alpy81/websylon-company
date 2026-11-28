@@ -16,27 +16,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle = "xyliviatec – Web- & App-Entwicklung";
+const siteDescription =
+  "xyliviatec entwickelt moderne Websites, Online-Shops und plattformübergreifende Apps für iOS und Android. Persönlich, schnell und mit Blick auf Ihr Ergebnis.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Websylon – Professionelle Webentwicklung",
-    template: "%s | Websylon",
+    default: siteTitle,
+    template: "%s | xyliviatec",
   },
-  description:
-    "Websylon entwickelt moderne, hochperformante Unternehmenswebseiten mit zeitgemäßem Design und technischer Exzellenz.",
+  description: siteDescription,
   keywords: [
     "Webentwicklung",
+    "App-Entwicklung",
+    "React Native",
+    "Online-Shop",
     "Unternehmenswebseite",
     "Next.js",
     "React",
     "moderne Website",
   ],
-  authors: [{ name: "Websylon" }],
-  creator: "Websylon",
-  metadataBase: new URL("https://websylon.de"),
+  authors: [{ name: "Alperen Ertas" }],
+  creator: "xyliviatec",
+  metadataBase: new URL("https://xyliviatec.de"),
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "de_DE",
-    siteName: "Websylon",
+    siteName: "xyliviatec",
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
@@ -49,12 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
-      {/* NEU: Script im head statt im body ↓ */}
       <head>
         <script dangerouslySetInnerHTML={{ __html: splashScript }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* ALT: <script dangerouslySetInnerHTML={{ __html: splashScript }} /> */}
         <CookieBanner />
         <SplashScreen />
         <Navigation />
